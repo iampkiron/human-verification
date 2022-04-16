@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자동입력방지</title>
+    <style>
+      html {
+        font-size: 10px;
+        margin: 1rem;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        color: #fefefe;
+        font-weight: normal;
+        font-size: 2.4rem;
+      }
+      .ban {
+        display: none;
+        color: #141416;
+      }
+      .ban.show {
+        display: block;
+      }
+      .container {
+        background-color: #141416;
+        padding: 1rem;
+        width: 500px;
+      }
+      .container.hide {
+        display: none;
+      }
+      .question {
+        margin-top: 1rem;
+        width: 48rem;
+        height: 48rem;
+        background-size: cover;
+        background-position: center;
+      }
+      .desc {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        text-align: center;
+        color: #2de47f;
+      }
+      .caution {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        margin-top: 1rem;
+        display: none;
+        color: #f5512a;
+        /* background-color: #fff7f6; */
+      }
+      .caution.show {
+        display: block;
+      }
+      .manage {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+      }
+      .answer {
+        flex: 1;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        background-color: #202020;
+        border: 0.2rem solid #4b4b4b;
+        color: #fefefe;
+        outline: none;
+      }
+      .submit {
+        margin-top: 1rem;
+        flex: 1;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        border: none;
+        background-color: #015700;
+        color: #fefefe;
+        cursor: pointer;
+      }
+      .submit:hover {
+        background-color: #02c65d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="ban">세션이 만료되었습니다.</h1>
+    <div class="container">
+      <h1>시즈니 인증 💚</h1>
+      <div class="question"></div>
+      <p class="desc">사진 속 인물은 누구입니까?</p>
+      <div class="manage">
+        <input class="answer" type="text" placeholder="정답을 입력해주세요." />
+        <p class="caution">
+          멤버 이름을 잘못 입력하셨습니다. (앞으로
+          <span class="count">3</span>번의 기회)
+        </p>
+        <button class="submit">전송</button>
+      </div>
+    </div>
+    <script src="/maincopy.js"></script>
+  </body>
+</html>
