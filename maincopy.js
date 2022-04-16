@@ -13,12 +13,12 @@
   let answer;
 
   let caution = document.querySelector(".caution");
-  let alert = document.querySelector(".alert");
   let background = document.querySelector(".question");
   let input = document.querySelector(".answer");
   let submit = document.querySelector(".submit");
 
   submit.addEventListener("click", () => {
+    if (input_text.value.trim() === "") return;
     caution.classList.remove("show");
     checkAnswer();
     input.value = "";
@@ -26,6 +26,7 @@
 
   input.addEventListener("keypress", (e) => {
     if (e.keyCode === 13) {
+      if (input_text.value.trim() === "") return;
       caution.classList.remove("show");
       checkAnswer();
       input.value = "";
